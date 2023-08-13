@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Service Requests</title>
+</head>
+<body>
+    <h1>Service Requests</h1>
+    <ul>
+        {% for request in requests %}
+        <li><a href="{% url 'Customer:request_detail' request.id %}">{{ request }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

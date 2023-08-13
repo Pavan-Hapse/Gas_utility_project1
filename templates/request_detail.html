@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ request_obj }}</title>
+</head>
+<body>
+    <h1>{{ request_obj }}</h1>
+    <p>Status: {{ request_obj.status }}</p>
+    <p>Details: {{ request_obj.details }}</p>
+    <p>Submitted at: {{ request_obj.submitted_at }}</p>
+    {% if request_obj.resolved_at %}
+    <p>Resolved at: {{ request_obj.resolved_at }}</p>
+    {% endif %}
+    {% if request_obj.attachments %}
+    <p>Attachments: <a href="{{ request_obj.attachments.url }}">Download Attachment</a></p>
+    {% endif %}
+    <p><a href="{% url 'Customer:request_list' %}">Back to Service Requests</a></p>
+</body>
+</html>
